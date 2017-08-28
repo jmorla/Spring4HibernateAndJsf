@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <f:metadata>
+        <f:viewAction action="#{employeeController.init}" onPostback="false"/>
+    </f:metadata>
+</f:view>
+<h:body>
+    <p:dataTable value="#{employeeController.employees}" var="emp">
+        <p:column headerText="Employee Id">
+            <h:outputLabel value="#{emp.employeeId}"/>
+        </p:column>
+        <p:column headerText="First name">
+            <h:outputLabel value="#{emp.firstName}"/>
+        </p:column>
+        <p:column headerText="Last name">
+            <h:outputLabel value="#{emp.lastName}"/>
+        </p:column>
+    </p:dataTable>
+</h:body>
+</html>
